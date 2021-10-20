@@ -11,6 +11,7 @@ for dirpath, dirnames, files in os.walk('.', topdown=False):
     for file_name in files:
         if (imghdr.what(dirpath + '/' + file_name)):
             valid_directories.append(dirpath)
+            break
 
 path = random.choice(valid_directories)
 for entry in os.listdir(path):
