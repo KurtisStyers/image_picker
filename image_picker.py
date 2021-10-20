@@ -1,7 +1,5 @@
 import os
-import sys
 import random
-import subprocess
 import imghdr
 
 path = '.'
@@ -10,7 +8,6 @@ valid_directories = []
 images = []
 
 for dirpath, dirnames, files in os.walk('.', topdown=False):
-    print(f'Found directory: {dirpath}')
     for file_name in files:
         if (imghdr.what(dirpath + '/' + file_name)):
             valid_directories.append(dirpath)
@@ -22,6 +19,3 @@ for entry in os.listdir(path):
             images.append(entry)
 
 print(random.choice(images))
-
-
-
