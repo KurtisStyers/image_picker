@@ -19,4 +19,4 @@ for entry in os.listdir(path):
         if(imghdr.what(path + '/' + entry)):
             images.append(entry)
 
-print(random.choice(images))
+print(random.choice(path + "/" + images))
