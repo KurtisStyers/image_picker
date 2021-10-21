@@ -1,6 +1,7 @@
 import os
 import random
 import imghdr
+from PIL import Image
 
 path = '.'
 
@@ -19,4 +20,7 @@ for entry in os.listdir(path):
         if(imghdr.what(path + '/' + entry)):
             images.append(entry)
 
-print(random.choice(path + "/" + images))
+image = random.choice(images)
+print(path + '/' + image)
+im = Image.open(path + '/' + image)
+im.show()
